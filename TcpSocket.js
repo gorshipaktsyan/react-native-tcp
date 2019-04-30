@@ -40,7 +40,7 @@ function TcpSocket(options: ?{ id: ?number }) {
     this._id = Number(options.id);
 
     if (this._id <= instances) {
-      throw new Error('Socket id ' + this._id + 'already in use');
+      //throw new Error('Socket id ' + this._id + 'already in use');
     }
   } else {
     // javascript generated sockets range from 1-1000
@@ -357,7 +357,7 @@ TcpSocket.prototype._write = function(buffer: any, encoding: ?String, callback: 
   var self = this;
 
   if (this._state === STATE.DISCONNECTED) {
-    throw new Error('Socket is not connected.');
+    //throw new Error('Socket is not connected.');
   } else if (this._state === STATE.CONNECTING) {
     // we're ok, GCDAsyncSocket handles queueing internally
   }
@@ -410,7 +410,7 @@ function setDisconnected(socket: TcpSocket, hadError: boolean): void {
 function normalizeError(err) {
   if (err) {
     if (typeof err === 'string') {
-      err = new Error(err);
+      //err = new Error(err);
     }
 
     return err;

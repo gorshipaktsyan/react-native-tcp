@@ -92,9 +92,9 @@ TcpServer.prototype.address = function() : { port: number, address: string, fami
 TcpServer.prototype.close = function(callback: ?() => void) {
   if (typeof callback === 'function') {
     if (!this._socket) {
-      this.once('close', function close() {
+      /*this.once('close', function close() {
         callback(new Error('Not running'));
-      });
+      });*/
     } else {
       this.once('close', callback);
     }
